@@ -8,7 +8,11 @@
         "istream": "cpp",
         "iostream": "cpp",
         "ios": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "__bit_reference": "cpp",
+        "algorithm": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled",
     "cmake.installPrefix": "${workspaceRoot}/bin"

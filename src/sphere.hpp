@@ -1,21 +1,21 @@
 #pragma once
 
-#include "hitable.hpp"
+#include "Hitable.hpp"
 
-class sphere : public hitable
+class Sphere : public Hitable
 {
 public:
-    sphere() {}
-    sphere(vec3 cen, float r) : center(cen), radius(r){};
-    virtual bool hit(const ray &r, float tmin, float tmax, hit_record &rec) const;
+    Sphere() {}
+    Sphere(Vec3 cen, float r) : center(cen), radius(r){};
+    virtual bool hit(const Ray &r, float tmin, float tmax, hit_record &rec) const;
 
-    vec3 center;
+    Vec3 center;
     float radius;
 };
 
-bool sphere::hit(const ray &r, float t_min, float t_max, hit_record &rec) const
+bool Sphere::hit(const Ray &r, float t_min, float t_max, hit_record &rec) const
 {
-    vec3 oc = r.origin() - center;
+    Vec3 oc = r.origin() - center;
     float a = dot(r.direction(), r.direction());
     float b = dot(oc, r.direction());
     float c = dot(oc, oc) - radius * radius;

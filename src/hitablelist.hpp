@@ -1,19 +1,19 @@
 #pragma once
 
-#include "hitable.hpp"
+#include "Hitable.hpp"
 
-class hitable_list : public hitable
+class HitableList : public Hitable
 {
 public:
-    hitable_list() {};
-    hitable_list(hitable **l, int n) : list(l), list_size(n) {};
-    virtual bool hit(const ray &r, float t_min, float t_max, hit_record &rec) const;
+    HitableList() {};
+    HitableList(Hitable **l, int n) : list(l), list_size(n) {};
+    virtual bool hit(const Ray &r, float t_min, float t_max, hit_record &rec) const;
 
-    hitable **list;
+    Hitable **list;
     int list_size;
 };
 
-bool hitable_list::hit(const ray &r, float t_min, float t_max, hit_record &rec) const
+bool HitableList::hit(const Ray &r, float t_min, float t_max, hit_record &rec) const
 {
     hit_record temp_rec;
     bool hit_anything = false;

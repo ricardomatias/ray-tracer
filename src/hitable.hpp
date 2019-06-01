@@ -1,16 +1,16 @@
 #pragma once
 
-#include "ray.hpp"
+#include "Ray.hpp"
 
 struct hit_record
 {
     float t;
-    vec3 p;
-    vec3 normal;
+    Vec3 p;
+    Vec3 normal;
 };
 
-class hitable
+class Hitable
 {
 public:
-    virtual bool hit(const ray &r, float t_min, float t_max, hit_record &rec) const = 0;
+    virtual bool hit(const Ray &r, float t_min, float t_max, hit_record &rec) const = 0;
 };
